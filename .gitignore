@@ -1,0 +1,11 @@
+.zig-cache/
+zig-out/
+zig-pkg/
+test/.zig-cache/
+test/zig-out/
+
+# editor/OS
+.DS_Store
+.vscode/
+.idea/
+*.swp

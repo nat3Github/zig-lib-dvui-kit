@@ -1,0 +1,22 @@
+.{
+    .name = .dvui_kit,
+    .version = "0.0.0",
+    .fingerprint = 0x454d43893eb67e4d,
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .icons = .{
+            .url = "git+https://github.com/nat3Github/zig-lib-icons.git#e9c2af332f762b3709c5bd278cb4c0aef427d9ee",
+            .hash = "icons-0.1.0-iJxA-YJzLwCq5bqAbxOsJIM4Kg4CXiiMuEFJc7BLfSaa",
+        },
+        .dvui = .{
+            .url = "git+https://github.com/nat3Github/zig-lib-dvui-dev-fork?ref=tvg-dvui-render#1e2ca007aa49eb0b7a066925a5b7f2f1429ca7f8",
+            .hash = "dvui-0.5.0-dev-AQFJmY039gAbwJOwBOkKIaig17sI6EmJCqhSlPbeDd5X",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "README.md",
+    },
+}

@@ -1,0 +1,19 @@
+.{
+    .name = .lib_dvui_kit_test,
+    .version = "0.0.0",
+    .fingerprint = 0x1a3a0ed40768aa60,
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .dvui = .{
+            .path = "../../lib-dvui",
+        },
+        .dvui_kit = .{
+            .path = "..",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
