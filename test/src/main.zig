@@ -303,14 +303,12 @@ fn colorRow(entries: []const ColorEntry, row_name: []const u8, row_id: usize, fi
         const selected = std.meta.eql(entry.color, icon_tint);
         const uid = row_id * 100 + i;
 
-        var tt_out: dvui.WidgetData = undefined;
         if (dvui.button(@src(), "", .{}, .{
             .id_extra = uid,
             .min_size_content = .{ .w = 48, .h = 40 },
             .color_fill = entry.color,
             .border = if (selected) dvui.Rect.all(3) else dvui.Rect.all(1),
             .margin = .{ .w = 2 },
-            .data_out = &tt_out,
         })) {
             icon_tint = entry.color;
             dvui.clipboardTextSet(entry.name);
@@ -318,8 +316,5 @@ fn colorRow(entries: []const ColorEntry, row_name: []const u8, row_id: usize, fi
             const toast_text = std.fmt.bufPrint(&buf, "tint set to kit.tailwind.{s}", .{entry.name}) catch "tint set";
             dvui.toast(@src(), .{ .message = toast_text, .timeout = 900_000 });
         }
-
-        const hex = entry.color.toHexString();
-        dvui.tooltip(@src(), .{ .active_rect = tt_out.borderRectScale().r }, "{s}\n{s}", .{ entry.name, hex }, .{ .id_extra = uid });
     }
 }
